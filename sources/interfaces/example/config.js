@@ -30,6 +30,17 @@ export default {
             ]
           }
         ]
+      },
+      xml: {
+        tpl: // eslint-disable-next-line no-template-curly-in-string
+          '<root><foo>${_("foo")}</foo></root>',
+        operations: [
+          {
+            from: 'test_metrics.foo',
+            to: 'foo',
+            mutations: m.m_uppercase
+          }
+        ]
       }
     }
   }

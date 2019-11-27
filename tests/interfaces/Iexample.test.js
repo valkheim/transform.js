@@ -9,7 +9,7 @@ describe("Iexample", () => {
     Uppercase and uppercase + as_string applies to foo and bar keys in accordance
     with the configuration ('example' interface, 'test' identity, 'metrics' kind, 'json' lang)
   */
-  test("Basic transformation", () => {
+  test("Basic JSON transformation", () => {
     const src = {
       test_metrics: {
         foo: "abc",
@@ -31,4 +31,23 @@ describe("Iexample", () => {
     ).get();
     expect(dst).toEqual(expected);
   });
+
+  /*
+  test("Basic XML transformation", () => {
+    const src = {
+      test_merics: {
+        foo: "abc",
+      },
+    }
+
+    const expected = "<root><foo>ABC</foo></root>"
+
+    const dst = new Iexample(
+      src,
+      CONSTANTS.ID.TEST,
+      CONSTANTS.KIND_METRICS,
+      CONSTANTS.LANG_XML
+    ).get();
+  })
+  */
 });
